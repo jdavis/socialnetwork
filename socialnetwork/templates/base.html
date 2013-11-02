@@ -4,21 +4,33 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{% block title %}{% endblock %} - The Social Network</title>
+    <title>{% block title %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="/lib/normalize/normalize.css" />
-    <link rel="stylesheet" href="/lib/foundation/css/foundation.css" />
-    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/static/lib/normalize/normalize.css" />
+    <link rel="stylesheet" href="/static/lib/foundation/css/foundation.min.css" />
+    <link rel="stylesheet" href="/static/css/app.css" />
     {% block css %}{% endblock %}
 
 </head>
 <body>
 
-    {% block content %}{% endblock %}
+    <div class="row">
+        <nav class="row">
+            <div class="large-12 columns">
+                <h2>The Social Network</h2>
+                <ul class="button-group radius even-4">
+                    <li><a class="button" href="#">Maine Coon</a></li>
+                    <li><a class="button" href="#">Turkish Angora</a></li>
+                    <li><a class="button" href="#">Russian Blue</a></li>
+                    <li><a class="button" href="#">Scottish Fold</a></li>
+                </ul>
+            </div>
+        </nav>
+        {% block content %}{% endblock %}
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="/lib/foundation/js/foundation.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="/static/lib/foundation/js/foundation.min.js"></script>
     {% block js %}{% endblock %}
 </body>
 </html>
