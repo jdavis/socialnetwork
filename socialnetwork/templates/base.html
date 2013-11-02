@@ -4,19 +4,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>The Social Network</title>
+    <title>{% block title %}{% endblock %} - The Social Network</title>
 
     <link rel="stylesheet" href="/lib/normalize/normalize.css" />
     <link rel="stylesheet" href="/lib/foundation/css/foundation.css" />
-
     <link rel="stylesheet" href="/css/app.css" />
+    {% block css %}{% endblock %}
 
 </head>
 <body>
 
-    <h1>The Social Network</h1>
+    {% block content %}{% endblock %}
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/lib/foundation/js/foundation.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    {% block js %}{% endblock %}
 </body>
 </html>

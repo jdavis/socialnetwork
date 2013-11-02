@@ -5,5 +5,5 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'socialnetwork.views.home', name='home'),
+    url(r'^$', include('newsfeed.urls', namespace='newsfeed')),
 )
