@@ -129,8 +129,11 @@ INSTALLED_APPS = (
     # Helper app that gives various features
     'django_extensions',
 
-    # Custom app for tsn
+    # Custom apps for tsn
+    'friends',
+    'messages',
     'newsfeed',
+    'profiles',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
