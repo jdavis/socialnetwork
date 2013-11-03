@@ -5,109 +5,107 @@
 {% block content %}
 
 
-
-    <!-- Main Page Content and Sidebar -->
-
-    <div class="row">
-
-        <!-- Main Blog Content -->
-        <div class="large-9 columns" role="content">
-
-            <article>
-
-                <h3><a href="#">Blog Post Title</a></h3>
-                <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
-
-                <div class="row">
-                    <div class="large-6 columns">
-                        <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-                        <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-                    </div>
-                    <div class="large-6 columns">
-                        <img src="http://placehold.it/400x240&text=[img]" />
-                    </div>
-                </div>
-
-                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
-                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
-            </article>
-
-            <hr />
-
-            <article>
-
-                <h3><a href="#">Blog Post Title</a></h3>
-                <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
-
-                <div class="row">
-                    <div class="large-6 columns">
-                        <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa.</p>
-                        <p>Boudin aliqua adipisicing rump corned beef. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-                    </div>
-                    <div class="large-6 columns">
-                        <img src="http://placehold.it/400x240&text=[img]" />
-                    </div>
-                </div>
-
-                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
-                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
-
-            </article>
-
+    <div class="large-3 columns ">
+      <div class="panel">
+        <a href="#"><img src="http://placehold.it/300x240&text=[img]" /></a>
+        <h5><a href="#">Your Name</a></h5>
+          <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+          <section class="section">
+            <h5 class="title"><a href="#">Section 1</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 2</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 3</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 4</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 5</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 6</a></h5>
+          </section>
         </div>
 
-        <!-- End Main Content -->
-
-
-        <!-- Sidebar -->
-
-        <aside class="large-3 columns">
-
-            <h5>Categories</h5>
-            <ul class="side-nav">
-                <li><a href="#">News</a></li>
-                <li><a href="#">Code</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Fun</a></li>
-                <li><a href="#">Weasels</a></li>
-            </ul>
-
-            <div class="panel">
-                <h5>Featured</h5>
-                <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-                <a href="#">Read More &rarr;</a>
-            </div>
-
-        </aside>
-
-        <!-- End Sidebar -->
+      </div>
     </div>
 
-    <!-- End Main Content and Sidebar -->
+    <!-- Main Feed -->
+    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+    <div class="large-6 columns">
+
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div class="large-10 columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="inline-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
 
 
-    <!-- Footer -->
-
-    <footer class="row">
-        <div class="large-12 columns">
-            <hr />
-            <div class="row">
-                <div class="large-6 columns">
-                    <p>&copy; Copyright no one at all. Go to town.</p>
-                </div>
-                <div class="large-6 columns">
-                    <ul class="inline-list right">
-                        <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li><a href="#">Link 3</a></li>
-                        <li><a href="#">Link 4</a></li>
-                    </ul>
-                </div>
-            </div>
+          <h6>2 Comments</h6>
+          <div class="row">
+            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
+            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
+          <div class="row">
+            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
+            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
         </div>
-    </footer>
-</div>
+      </div>
+      <!-- End Feed Entry -->
+
+      <hr />
+
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div class="large-10 columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="inline-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Feed Entry -->
+
+      <hr />
+
+      <!-- Feed Entry -->
+      <div class="row">
+        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div class="large-10 columns">
+          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+          <ul class="inline-list">
+            <li><a href="">Reply</a></li>
+            <li><a href="">Share</a></li>
+          </ul>
+
+
+          <h6>2 Comments</h6>
+          <div class="row">
+            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
+            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- End Feed Entry -->
+
+    </div>
+
+    <!-- Right Sidebar -->
+    <!-- On small devices this column is hidden -->
+    <aside class="large-3 columns hide-for-small">
+      <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+      <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+    </aside>
+
+  </div>
 {% endblock %}
