@@ -1,27 +1,39 @@
-nav .button {
+.nav {
+    margin: 1.4em 0;
+}
+
+.nav .nav-element {
+    padding: 0;
+    margin: 0;
     border: 0;
-    background: #eb974e;
+    background: #2ba6cb;
     -webkit-box-shadow: 0;
     -moz-box-shadow: 0;
     box-shadow: 0;
     font-size: 0.75em;
-    color: rgba(255, 255, 255, 0.96);
-    text-transform: uppercase;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    -webkit-box-shadow: 0px 4px 0px #a74d46;
-    -moz-box-shadow: 0px 4px 0px #a74d46;
-    box-shadow: 0px 4px 0px #a74d46;
+    color: rgba(255, 255, 255, 0.9);
+    -webkit-box-shadow: 0px 4px 0px #2284a1;
+    -moz-box-shadow: 0px 4px 0px #2284a1;
+    box-shadow: 0px 4px 0px #2284a1;
+    height: 50px;
+    line-height: 50px;
 }
 
-nav .button:hover {
-    background: #e88a37;
+.nav .nav-element.button.main {
+    font-size: 1.1em;
+    text-transform: none;
+    text-align: center;
+}
+
+.nav .nav-element.button {
+    text-transform: uppercase;
+}
+
+.nav .nav-element.button:hover {
+    background-color: #2284a1;
     color: white;
 }
 
-nav .button:active {
-    -webkit-box-shadow: 0px 4px 0px #a74d46;
-    -moz-box-shadow: 0px 4px 0px #a74d46;
-    box-shadow: 0px 4px 0px #a74d46;
-    background: #e78129;
+.nav .nav-element.button:active {
+    background-color: #2284a1;
 }
