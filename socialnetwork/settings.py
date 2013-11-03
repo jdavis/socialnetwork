@@ -166,3 +166,13 @@ LOGGING = {
         },
     }
 }
+
+#
+# User Defined Settings
+#
+
+# Graph Settings for django-extensions
+GRAPH_MODELS = {
+    'all_applications': True,
+    'exclude_models': 'AbstractUser, User, Group, Permission, ContentType, Site',
+}
