@@ -174,5 +174,5 @@ LOGGING = {
 # Graph Settings for django-extensions
 GRAPH_MODELS = {
     'all_applications': True,
-    'exclude_models': 'AbstractUser, User, Group, Permission, ContentType, Site',
+    'exclude_models': 'AbstractUser, Group, Permission, ContentType, Site',
 }
