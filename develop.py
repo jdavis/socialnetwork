@@ -88,7 +88,7 @@ def install(dev=True):
         pip = './ENV/Scripts/pip'
         site_packages = 'ENV/Lib/site-packages'
     elif USE_UNIX:
-        print 'Setting up ENV with Linux...\n'
+        print 'Setting up ENV with Unix...\n'
         pip = './ENV/bin/pip'
         site_packages = 'ENV/lib/*/site-packages'
 
