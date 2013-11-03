@@ -13,7 +13,7 @@ class UserProfile(models.Model):
     last_name = models.CharField(max_length=30)
     birthday = models.DateField()
 
-    profile_picture = models.ImageField()
+    profile_picture = models.ImageField(upload_to='photos/profiles/')
 
     gender = models.CharField(max_length=1, choices=GENDERS)
 
@@ -23,7 +23,7 @@ class UserProfile(models.Model):
 
 class StatusUpdate(models.Model):
     content = models.TextField(blank=False)
-    thumbnail = models.ImageField()
+    thumbnail = models.ImageField(upload_to='photos/thumbs/')
 
     creator = models.ForeignKey(UserProfile)
 
