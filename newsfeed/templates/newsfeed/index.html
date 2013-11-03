@@ -5,100 +5,146 @@
 {% block content %}
 
 
-    <div class="large-3 columns ">
-      <div class="panel">
-        <a href="#"><img src="http://placehold.it/300x240&text=[img]" /></a>
-        <h5><a href="#">Your Name</a></h5>
-          <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-          <section class="section">
-            <h5 class="title"><a href="#">Section 1</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Section 2</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Section 3</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Section 4</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Section 5</a></h5>
-          </section>
-          <section class="section">
-            <h5 class="title"><a href="#">Section 6</a></h5>
-          </section>
-        </div>
+<div class="large-3 columns">
+    <div class="panel">
+        <div class="row sidebar">
+            <div class="large-12 columns">
+                <a href="#" class="th radius margin-large tb"><img src="/static/img/placeholders/donatello.jpg" /></a>
 
-      </div>
+                <h4 class="subheader"><a href="#">Donatello Turtle</a></h4>
+                <dl>
+                    <dt>Location</dt>
+                    <dd>NYC Sewer</dd>
+
+                    <dt>Gender</dt>
+                    <dd>Male</dd>
+
+                    <dt>Birthday</dt>
+                    <dd>October 1st</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="large-9 columns">
+    <div class="row">
+        <h3 class="subheader">Newsfeed</h3>
+
+        <form>
+            <div class="row">
+                <div class="large-12 columns">
+                    <label for="statusUpdate">Status Update</label>
+                    <input id="statusUpdate" name="statusUpdate" type="text" placeholder="Let the world know what you think.">
+                </div>
+            </div>
+        </form>
     </div>
 
-    <!-- Main Feed -->
-    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-    <div class="large-9 columns">
-
-      <!-- Feed Entry -->
-      <div class="row">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-        <div class="large-10 columns">
-          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-          <ul class="inline-list">
-            <li><a href="">Reply</a></li>
-            <li><a href="">Share</a></li>
-          </ul>
-
-
-          <h6>2 Comments</h6>
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
-          </div>
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
-          </div>
+    <div class="row">
+        <div class="large-2 columns small-3">
+            <img src="/static/img/placeholders/michelangelo-thumb.jpg" />
         </div>
-      </div>
-      <!-- End Feed Entry -->
 
-      <hr />
-
-      <!-- Feed Entry -->
-      <div class="row">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
         <div class="large-10 columns">
-          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-          <ul class="inline-list">
-            <li><a href="">Reply</a></li>
-            <li><a href="">Share</a></li>
-          </ul>
+            <p>
+                <strong>Michelangelo said:</strong> Bacon ipsum dolor sit amet
+                nulla ham qui sint exercitation eiusmod commodo, chuck duis
+                velit. Aute in reprehenderit, dolore aliqua non est magna in
+                labore pig pork biltong.
+            </p>
+
+            <ul class="inline-list">
+                <li><a href="">Reply</a></li>
+                <li><a href="">Share</a></li>
+            </ul>
+
+            <h6>2 Comments</h6>
+
+            <div class="row margin-small tb">
+                <div class="large-2 columns small-3">
+                    <img src="/static/img/placeholders/leonardo-thumb.jpg" />
+                </div>
+
+                <div class="large-10 columns">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row margin-small tb">
+                <div class="large-2 columns small-3">
+                    <img src="/static/img/placeholders/donatello-thumb.jpg" />
+                </div>
+
+                <div class="large-10 columns">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- End Feed Entry -->
-
-      <hr />
-
-      <!-- Feed Entry -->
-      <div class="row">
-        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-        <div class="large-10 columns">
-          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-          <ul class="inline-list">
-            <li><a href="">Reply</a></li>
-            <li><a href="">Share</a></li>
-          </ul>
-
-
-          <h6>2 Comments</h6>
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
-          </div>
-        </div>
-      </div>
-      <!-- End Feed Entry -->
-
     </div>
 
-  </div>
+    <hr />
+
+    <div class="row">
+        <div class="large-2 columns small-3">
+            <img src="/static/img/placeholders/shredder-thumb.png" />
+        </div>
+
+        <div class="large-10 columns">
+            <p>
+                <strong>Shredder said:</strong> Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua.
+            </p>
+            <ul class="inline-list">
+                <li><a href="">Reply</a></li>
+                <li><a href="">Share</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="large-2 columns small-3">
+            <img src="/static/img/placeholders/shredder-thumb.png" />
+        </div>
+
+        <div class="large-10 columns">
+            <p>
+                <strong>Shredder said:</strong> Bacon ipsum dolor sit amet
+                nulla ham qui sint exercitation eiusmod commodo, chuck duis
+                velit. Aute in reprehenderit, dolore aliqua non est magna in
+                labore pig pork biltong.
+            </p>
+            <ul class="inline-list">
+                <li><a href="">Reply</a></li>
+                <li><a href="">Share</a></li>
+            </ul>
+
+            <h6>1 Comment</h6>
+            <div class="row margin-small tb">
+                <div class="large-2 columns small-3">
+                    <img src="/static/img/placeholders/leonardo-thumb.jpg" />
+                </div>
+
+                <div class="large-10 columns">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
