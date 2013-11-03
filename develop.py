@@ -10,6 +10,7 @@ Commands:
     clean       Clean up the environment.
     help        Show this help message.
     install     Install requirements using virtualenv.
+    dev         Install requirements for developing using virtualenv.
 """
 
 import glob
@@ -36,6 +37,7 @@ def main():
         'clean': clean,
         'help': usage,
         'install': install,
+        'dev': dev_install,
     }
 
     if len(sys.argv) == 1:
@@ -72,7 +74,11 @@ def clean():
     return 0
 
 
-def install():
+def dev_install():
+    return install(dev=True)
+
+
+def install(dev=True):
     # Install VirtualENV
     subprocess.call([sys.executable, VIRTUAL_ENV_PATH, '--system-site-packages', 'ENV'])
 
@@ -98,6 +104,9 @@ def install():
 
     # Install our frozen dependencies
     subprocess.call([pip, 'install', '-r', 'requirements.txt'])
+
+    if dev is True:
+        subprocess.call([pip, 'install', '-r', 'requirements-dev.txt'])
 
     return 0
 
