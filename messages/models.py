@@ -4,8 +4,8 @@ from django.db import models
 class Message(models.Model):
     content = models.TextField(blank=False)
 
-    sender = models.ForeignKey('profiles.UserProfile')
-    recepient = models.ForeignKey('profiles.UserProfile')
+    sender = models.ForeignKey('profiles.UserProfile', related_name='messages_to')
+    recepient = models.ForeignKey('profiles.UserProfile', related_name='messages_from')
 
     created = models.DateTimeField(auto_now=True)
     modified = models.DateTimeField(auto_now_add=True)
