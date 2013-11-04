@@ -1,28 +1,37 @@
 .nav {
     margin: 1.4em 0;
+    background-color: #2ba6cb;
+    height: 50px;
+
+    -webkit-box-shadow: 0px 4px 0px #2284a1;
+       -moz-box-shadow: 0px 4px 0px #2284a1;
+            box-shadow: 0px 4px 0px #2284a1;
+
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
 }
 
 .nav .nav-element {
     padding: 0;
     margin: 0;
     border: 0;
-    background: #2ba6cb;
-    -webkit-box-shadow: 0;
-    -moz-box-shadow: 0;
-    box-shadow: 0;
     font-size: 0.75em;
     color: rgba(255, 255, 255, 1);
-    -webkit-box-shadow: 0px 4px 0px #2284a1;
-    -moz-box-shadow: 0px 4px 0px #2284a1;
-    box-shadow: 0px 4px 0px #2284a1;
-    height: 50px;
     line-height: 50px;
+
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+
+    -webkit-box-shadow: none;
+            box-shadow: none;
 }
 
 .nav .nav-element.button.main {
     font-size: 1.1em;
-    text-transform: none;
     text-align: center;
+    text-transform: none;
 }
 
 .nav .nav-element.button {
@@ -65,4 +74,12 @@
 .margin-small.lr {
     margin-left: 0.6375em;
     margin-right: 0.6375em;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
