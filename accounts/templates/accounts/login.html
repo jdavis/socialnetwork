@@ -1,0 +1,23 @@
+<html>
+    <head>
+        {% load staticfiles %}
+        <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' 
+              rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" 
+              href="{% static 'accounts/style.css' %}" />
+    </head>
+
+    <body>
+        <h1><div id="title1">Welcome to the<br />
+                             Social Network</div></h1>
+        <form action="{% url 'accounts:login' %}" method="POST">
+            {% csrf_token %}
+            <div id="fields">
+                {{ form.as_p }}
+            </div>
+            <div id="submit">
+                <input type="submit" value="Log In" />
+            </div>
+        </form>
+    </body>
+</form>

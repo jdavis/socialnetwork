@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'django_extensions',
 
     # Custom apps for tsn
+    'accounts',
     'friends',
     'messages',
     'newsfeed',
