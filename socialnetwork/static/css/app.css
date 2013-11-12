@@ -1,3 +1,7 @@
+.row .row.content {
+    margin: 2em 0;
+}
+
 .nav {
     margin: 1.4em 0;
     background-color: #2ba6cb;
@@ -82,4 +86,25 @@
 
 .right {
     float: right;
+}
+
+.box {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e6e6e6;
+    margin-bottom: 1.25em;
+    padding: 1.25em;
+    background: #fafafa;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+.clear:before, div.clear:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.clear:after {
+    clear: both;
 }
