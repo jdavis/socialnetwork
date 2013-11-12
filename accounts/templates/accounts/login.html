@@ -1,23 +1,21 @@
-<html>
-    <head>
-        {% load staticfiles %}
-        <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700' 
-              rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" 
-              href="{% static 'accounts/style.css' %}" />
-    </head>
+{% extends "base.html" %}
 
-    <body>
-        <h1><div id="title1">Welcome to the<br />
-                             Social Network</div></h1>
-        <form action="{% url 'accounts:login' %}" method="POST">
-            {% csrf_token %}
-            <div id="fields">
+{% block title %}Login - The Social Network{% endblock %}
+
+{% block content %}
+
+<form action="{% url 'accounts:login' %}" method="post">
+    {% csrf_token %}
+
+        <div class="row content">
+            <div class="box clear large-4 small-centered columns">
+                <h4>Login</h4>
                 {{ form.as_p }}
+                <input type="submit" class="button right" value="Log In">
             </div>
-            <div id="submit">
-                <input type="submit" value="Log In" />
-            </div>
-        </form>
-    </body>
+        </div>
+
+
 </form>
+
+{% endblock %}
