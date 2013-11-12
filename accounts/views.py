@@ -40,7 +40,7 @@ def login(request):
         )
 
 def register(request):
-    return HttpResponse("You are on the registration page.")
+        return render(request, 'accounts/register.html', {})
 
 def logout(request):
     django.contrib.auth.logout(request)
