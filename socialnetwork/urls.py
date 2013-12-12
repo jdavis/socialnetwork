@@ -10,7 +10,8 @@ urlpatterns = patterns(
     # App URLs
     url(r'^$', include('newsfeed.urls', namespace='newsfeed')),
     url(r'^profiles/', include('profiles.urls', namespace='profiles')),
-    url(r'^accounts/', include('accounts.urls', namespace='accounts'))
+    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^messages/', include('messages.urls', namespace='messages'))
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
