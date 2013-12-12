@@ -3,7 +3,13 @@
 {% block title %}Register - The Social Network{% endblock %}
 
 {% block content %}
+<form action="{% url 'accounts:register' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
 
+<!--
 <form action="{% url 'accounts:login' %}" method="post">
     {% csrf_token %}
 
@@ -64,5 +70,6 @@
             </div>
         </div>
 </form>
+-->
 
 {% endblock %}

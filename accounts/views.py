@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 import django.contrib.auth
 from django.shortcuts import render
 
-import django.contrib.auth.forms as forms
+from django.contrib.auth import forms
 
 def check_credentials(request):
     '''
@@ -28,6 +28,8 @@ def login(request):
         form = forms.AuthenticationForm(data=request.POST)
         if form.is_valid() and check_credentials(request):
             return HttpResponseRedirect('/')
+        else:
+            return HttpResponseRedirect('/accounts/login')
     else:
         # If user is already logged in, redirect them home.
         if request.user.is_authenticated():
@@ -40,10 +42,15 @@ def login(request):
         )
 
 def register(request):
-        return render(request, 'accounts/register.html', {})
+    if request.method == 'POST':
+        form = forms.UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            return HttpResponseRedirect("/")
+    else:
+        form = forms.UserCreationForm()
+        return render(request, 'accounts/register.html', {'form': form})
 
 def logout(request):
     django.contrib.auth.logout(request)
     return HttpResponseRedirect('/accounts/login/')
-
-
