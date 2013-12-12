@@ -11,6 +11,7 @@ urlpatterns = patterns(
     url(r'^$', include('newsfeed.urls', namespace='newsfeed')),
     url(r'^profiles/', include('profiles.urls', namespace='profiles')),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^messages/', include('messages.urls', namespace='messages'))
 )
 
 if settings.DEBUG:
