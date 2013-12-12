@@ -1,7 +1,9 @@
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
 
+from messages import views
+
 urlpatterns = patterns(
     '',
-    url(r'^$', TemplateView.as_view(template_name='messages/index.html')),
+    url(r'^$', views.messages, name='messages')
 )
