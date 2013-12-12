@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
 {# TODO: Use template variables #}
-{% block title %}Donatello Turtle{% endblock %}
+{% block title %}
+    {% if profile.first_name %}
+        {{ profile.first_name}}
+    {% else %}
+        {{ user }}
+    {% endif %}'s Profile
+{% endblock %}
 
 {% block content %}
 
@@ -9,7 +15,13 @@
     <div class="panel">
         <div class="row sidebar">
             <div class="large-12 columns">
-                <a href="#" class="th radius margin-large tb"><img src="/static/img/placeholders/donatello.jpg" /></a>
+                <a href="#" class="th radius margin-large tb">
+                    {% if profile.profile_picture %}
+                        <img src="{{profile.profile_picture}}" />
+                    {% else %}
+                        <img src="/static/img/placeholders/donatello.jpg" />
+                    {% endif %}
+                </a>
 
                 <h4 class="subheader"><a href="#">Donatello Turtle</a></h4>
                 <dl>
