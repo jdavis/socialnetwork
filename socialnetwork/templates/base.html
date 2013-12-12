@@ -16,21 +16,22 @@
 
     <div class="row">
         <div class="large-12 columns">
-        {# TODO: Reverse this boolean #}
-        {% if logged_in %}
-            <ul class="nav button-group radius even-5">
-                <li><a class="nav-element main button large-offset-2" href="/">The Social Network</a></li>
-                <li class="right"><a class="nav-element button" href="#">Register</a></li>
-                <li class="right"><a class="nav-element button" href="#">Sign In</a></li>
-            </ul>
-        {% else %}
-            <ul class="nav button-group radius even-5">
+        {% if user.is_authenticated %}
+            <ul class="nav button-group radius even-6">
                 <li><a class="nav-element main button" href="/">The Social Network</a></li>
                 <li><a class="nav-element button" href="/profiles/">Profile</a></li>
                 <li><a class="nav-element button" href="#">Friends</a></li>
                 <li><a class="nav-element button" href="#">Messages</a></li>
                 <li><a class="nav-element button" href="#">Settings</a></li>
+                <li><a class="nav-element button" href="/accounts/logout/">Sign Out</a></li>
             </ul>
+        {% else %}
+            <ul class="nav button-group radius even-5">
+                <li><a class="nav-element main button large-offset-2" href="/">The Social Network</a></li>
+                <li class="right"><a class="nav-element button" href="/accounts/register/">Register</a></li>
+                <li class="right"><a class="nav-element button" href="/accounts/login/">Sign In</a></li>
+            </ul>
+
         {% endif %}
         </div>
     </div>
