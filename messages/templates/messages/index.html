@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Messages{% endblock %}
+
+{% block content %}
+
+<div class="large-12 columns">
+    <h3 class="subheader">Message Inbox</h3>
+    <div class="row">
+        <div class="large-12 columns">
+                <dl class="tabs vertical" data-tab>
+                    <dd class="active"><a href="#leonardo">Leonardo Turtle</a></dd>
+                    <dd><a href="#shredder">Shredder</a></dd>
+                </dl>
+                <div class="tabs-content vertical">
+                    <div class="content active" id="leonardo">
+                        <div class="received row">
+                            <div class="large-2 columns small-3">
+                                <img width="50" src="/static/img/placeholders/leonardo-thumb.jpg" />
+                            </div>
+
+                            <div class="large-10 columns small-3">
+                                <span><strong>Leonardo:</strong></span>
+                                <p>
+                                Bacon ipsum dolor sit amet nulla ham qui sint
+                                exercitation eiusmod commodo, chuck duis velit. Aute in
+                                reprehenderit
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="sent row">
+                            <div class="large-10 columns small-3">
+                                <span><strong>You:</strong></span>
+                                <p>
+                                Bacon ipsum dolor sit amet nulla ham qui sint
+                                exercitation eiusmod commodo, chuck duis velit. Aute in
+                                reprehenderit
+                                </p>
+                            </div>
+
+                            <div class="large-2 columns small-3">
+                                <img width="50" src="/static/img/placeholders/donatello-thumb.jpg" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <form>
+                                    <input name="messageResponse" type="text" placeholder="Message Response">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content" id="shredder">
+                        <p>Panel 2 content goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
