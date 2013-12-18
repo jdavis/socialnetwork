@@ -21,6 +21,7 @@ class IndexView(generic.TemplateView):
                 friends.append(fr.user2)
             if request.user == fr.user2:
                 friends.append(fr.user1)
+        friends.append(request.user)
 
         # Get statuses that friends have posted.
         s_relationships = []
