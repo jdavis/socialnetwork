@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Edit Profile
+{% endblock %}
+
+{% block content %}
+
+<form enctype="multipart/form-data" action="{% url 'profiles:edit' %}" method="post">
+    {% csrf_token %}
+
+        <div class="row content">
+            <div class="box clear large-4 small-centered columns">
+                <h4>Edit Profile</h4>
+                {{ form.as_p }}
+                <input type="submit" class="button right" value="Save">
+            </div>
+        </div>
+</form>
+
+{% endblock %}

@@ -1,7 +1,9 @@
 from django.conf.urls import patterns, url
-from django.views.generic import TemplateView
+
+from profiles import views
 
 urlpatterns = patterns(
     '',
-    url(r'^$', TemplateView.as_view(template_name='profiles/index.html')),
+    url(r'^$', views.profiles, name='profiles'),
+    url(r'^edit/', views.edit, name='edit'),
 )

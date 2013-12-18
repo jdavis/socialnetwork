@@ -1,8 +1,9 @@
 from django.http import HttpResponse, HttpResponseRedirect
-import django.contrib.auth
 from django.shortcuts import render
-
 from django.contrib.auth import forms
+
+import django.contrib.auth
+import django.forms
 
 def check_credentials(request):
     '''
@@ -41,14 +42,36 @@ def login(request):
             }
         )
 
+class RegistrationForm(forms.UserCreationForm):
+    email = django.forms.EmailField(required=True)
+    first_name = django.forms.CharField(max_length=30)
+    last_name = django.forms.CharField(max_length=30)
+
+    class Meta:
+        model = django.contrib.auth.models.User
+        fields = ('username', 'email', 'first_name', 'last_name', 
+                  'password1', 'password2')
+
+    def save(self, commit=True):
+        user = super(RegistrationForm, self).save(commit=False)
+        user.email = self.cleaned_data["email"]
+        user.first_name = self.cleaned_data["first_name"]
+        user.last_name = self.cleaned_data["last_name"]
+
+        if commit:
+            user.save()
+        return user
+
 def register(request):
     if request.method == 'POST':
-        form = forms.UserCreationForm(request.POST)
+        form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            return HttpResponseRedirect("/")
+            return HttpResponseRedirect("/accounts/login/")
+        else:
+            return HttpResponseRedirect("/accounts/register/")
     else:
-        form = forms.UserCreationForm()
+        form = RegistrationForm()
         return render(request, 'accounts/register.html', {'form': form})
 
 def logout(request):
