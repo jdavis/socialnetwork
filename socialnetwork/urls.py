@@ -13,4 +13,10 @@ urlpatterns = patterns(
     url(r'^accounts/', include('accounts.urls', namespace='accounts'))
 )
 
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    )
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
