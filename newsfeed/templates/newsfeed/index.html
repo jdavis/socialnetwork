@@ -4,24 +4,39 @@
 
 {% block content %}
 
-
 <div class="large-3 columns">
     <div class="panel">
         <div class="row sidebar">
             <div class="large-12 columns">
-                <a href="#" class="th radius margin-large tb"><img src="/static/img/placeholders/donatello.jpg" /></a>
+                <a href="#" class="th radius margin-large tb">
+                    {% if user.userprofile.profile_picture %}
+                        <img src="/{{ user.userprofile.profile_picture.url }}" />
+                    {% else %}
+                        <img src="/static/img/placeholders/donatello.jpg" />
+                    {% endif %}
+                </a>
 
-                <h4 class="subheader"><a href="#">Donatello Turtle</a></h4>
+                <h4 class="subheader">
+                    <a href="#">{{ user.first_name }} {{ user.last_name }}</a>
+                </h4>
                 <dl>
-                    <dt>Location</dt>
-                    <dd>NYC Sewer</dd>
-
                     <dt>Gender</dt>
-                    <dd>Male</dd>
+                    {% if user.userprofile.gender %}
+                        <dd>{{ user.userprofile.gender }}</dd>
+                    {% else %}
+                        <dd>???</dd>
+                    {% endif %}
 
                     <dt>Birthday</dt>
-                    <dd>October 1st</dd>
+                    {% if user.userprofile.birthday %}
+                        <dd>{{ user.userprofile.birthday }}</dd>
+                    {% else %}
+                        <dd>???</dd>
+                    {% endif %}
+                    <dt>Member Since</dt>
+                    <dd>{{ user.userprofile.created }}</dd>
                 </dl>
+                <a href="{% url 'profiles:edit' %}">Edit Profile</a>
             </div>
         </div>
     </div>
@@ -41,69 +56,24 @@
         </form>
     </div>
 
+    {% for status in statuses %}
     <div class="row">
         <div class="large-2 columns small-3">
-            <img src="/static/img/placeholders/michelangelo-thumb.jpg" />
+            {% if status.user.userprofile.profile_picture %}
+            <img src="/{{ status.user.userprofile.profile_picture.url }}" />
+            {% else %}
+            <img src="/static/img/placeholders/donatello.jpg" />
+            {% endif %}
         </div>
 
         <div class="large-10 columns">
             <p>
-                <strong>Michelangelo said:</strong> Bacon ipsum dolor sit amet
-                nulla ham qui sint exercitation eiusmod commodo, chuck duis
-                velit. Aute in reprehenderit, dolore aliqua non est magna in
-                labore pig pork biltong.
+                <strong>{{ status.user.first_name }} {{status.user.last_name }} said:</strong> {{ status.status.content }}
             </p>
-
-            <ul class="inline-list">
-                <li><a href="">Reply</a></li>
-                <li><a href="">Share</a></li>
-            </ul>
-
-            <h6>2 Comments</h6>
-
-            <div class="row margin-small tb">
-                <div class="large-2 columns small-3">
-                    <img src="/static/img/placeholders/leonardo-thumb.jpg" />
-                </div>
-
-                <div class="large-10 columns">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row margin-small tb">
-                <div class="large-2 columns small-3">
-                    <img src="/static/img/placeholders/donatello-thumb.jpg" />
-                </div>
-
-                <div class="large-10 columns">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <hr />
-
-    <div class="row">
-        <div class="large-2 columns small-3">
-            <img src="/static/img/placeholders/shredder-thumb.png" />
-        </div>
-
-        <div class="large-10 columns">
             <p>
-                <strong>Shredder said:</strong> Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore magna aliqua.
+                <em>on {{ status.created }}</em>
             </p>
+
             <ul class="inline-list">
                 <li><a href="">Reply</a></li>
                 <li><a href="">Share</a></li>
@@ -112,39 +82,6 @@
     </div>
 
     <hr />
-
-    <div class="row">
-        <div class="large-2 columns small-3">
-            <img src="/static/img/placeholders/shredder-thumb.png" />
-        </div>
-
-        <div class="large-10 columns">
-            <p>
-                <strong>Shredder said:</strong> Bacon ipsum dolor sit amet
-                nulla ham qui sint exercitation eiusmod commodo, chuck duis
-                velit. Aute in reprehenderit, dolore aliqua non est magna in
-                labore pig pork biltong.
-            </p>
-            <ul class="inline-list">
-                <li><a href="">Reply</a></li>
-                <li><a href="">Share</a></li>
-            </ul>
-
-            <h6>1 Comment</h6>
-            <div class="row margin-small tb">
-                <div class="large-2 columns small-3">
-                    <img src="/static/img/placeholders/leonardo-thumb.jpg" />
-                </div>
-
-                <div class="large-10 columns">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 {% endblock %}

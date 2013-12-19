@@ -23,13 +23,4 @@ class UserProfile(models.Model):
     created = models.DateTimeField(auto_now=True)
     modified = models.DateTimeField(auto_now_add=True)
 
-class StatusUpdate(models.Model):
-    content = models.TextField(blank=False)
-    thumbnail = models.ImageField(upload_to='photos/thumbs/')
-
-    creator = models.ForeignKey(UserProfile)
-
-    created = models.DateTimeField(auto_now=True)
-    modified = models.DateTimeField(auto_now_add=True)
-
 post_save.connect(create_profile, sender=User)

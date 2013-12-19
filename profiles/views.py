@@ -22,7 +22,7 @@ def edit(request):
         else:
             raise Exception("Failed.")
 
-        return HttpResponseRedirect("/profiles/")
+        return HttpResponseRedirect("/")
     else:
         form = EditForm(instance=profile)
         return render(request, 'profiles/edit.html', {'form': form})
