@@ -5,9 +5,14 @@
 {% block content %}
 
 <form action="{% url 'accounts:register' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
+        <div class="row content">
+            <div class="box clear large-10 small-centered columns">
+                <h4>Register</h4>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit" />
+            </div>
+        </div>
 </form>
 
 {% endblock %}
