@@ -9,11 +9,13 @@
     <div class="row">
         <div class="large-12 columns">
                 <dl class="tabs vertical" data-tab>
-                    <dd class="active"><a href="#leonardo">Leonardo Turtle</a></dd>
-                    <dd><a href="#shredder">Shredder</a></dd>
+                {% for thread in threads %}
+                    <dd{% if current_thread == thread %} class="active"{% endif %}><a href="/messages/thread">{{ thread }}</a></dd>
+                {% endfor %}
                 </dl>
                 <div class="tabs-content vertical">
                     <div class="content active" id="leonardo">
+                    {% for message in messages %}
                         <div class="received row">
                             <div class="large-2 columns small-3">
                                 <img width="50" src="/static/img/placeholders/leonardo-thumb.jpg" />
@@ -46,8 +48,12 @@
 
                         <div class="row">
                             <div class="large-12 columns">
-                                <form>
-                                    <input name="messageResponse" type="text" placeholder="Message Response">
+                                <form action="{{ action }}" method="POST">
+                                    {% csrf_token %}
+                                    <ul>
+                                        {{ message_form.as_ul }}
+                                    </ul>
+                                    <input type="submit" value="Save" />
                                 </form>
                             </div>
                         </div>
