@@ -13,7 +13,7 @@ class IndexView(generic.TemplateView):
             relationship = StatusRelationship(user=request.user,
                                               status=status)
             relationship.save()
-        
+
         friend_list = friends.views.get_friends(request.user)
         friend_list.append(request.user)
         # Get statuses that friends have posted.
