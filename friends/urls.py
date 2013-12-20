@@ -1,8 +1,9 @@
 from django.conf.urls import patterns, url
+from django.views.generic import TemplateView
 
-from friends import views
+from views import FriendsView
 
 urlpatterns = patterns(
     '',
-    url(r'^$', views.show_friends, name='show_friends'),
+    url(r'^$', FriendsView.as_view(template_name='friends/index.html')),
 )
