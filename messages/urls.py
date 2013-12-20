@@ -5,5 +5,6 @@ from messages import views
 
 urlpatterns = patterns(
     '',
-    url(r'^$', views.messages, name='messages')
+    url(r'^$', views.messages, name='messages'),
+    url(r'^(?P<thread_username>\d+)/$', views.messages, name='messages')
 )
