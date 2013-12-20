@@ -1,4 +1,4 @@
-# Create your views here.
+from django.shortcuts import render
 from models import Friendship
 
 def get_friends(user):
@@ -9,3 +9,7 @@ def get_friends(user):
         if user == fr.user2:
             friends.append(fr.user1)
     return friends
+
+def show_friends(request):
+    friends = get_friends(request.user)
+    return render(request, 'friends/index.html', {"friends": friends})

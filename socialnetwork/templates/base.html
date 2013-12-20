@@ -19,7 +19,7 @@
         {% if user.is_authenticated %}
             <ul class="nav button-group radius even-5">
                 <li><a class="nav-element main button" href="/">The Social Network</a></li>
-                <li><a class="nav-element button" href="#">Friends</a></li>
+                <li><a class="nav-element button" href="{% url 'friends:show_friends' %}">Friends</a></li>
                 <li><a class="nav-element button" href="#">Messages</a></li>
                 <li><a class="nav-element button" href="#">Settings</a></li>
                 <li><a class="nav-element button" href="/accounts/logout/">Sign Out</a></li>
