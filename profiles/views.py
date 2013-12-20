@@ -11,7 +11,6 @@ class EditForm(ModelForm):
     class Meta:
         model = UserProfile
         fields = ['birthday', 'profile_picture', 'gender']
-        # fields = ['birthday', 'gender']
 
 def edit(request):
     profile = request.user.userprofile
