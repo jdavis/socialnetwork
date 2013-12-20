@@ -183,3 +183,6 @@ GRAPH_MODELS = {
 FIXTURE_DIRS = (
     os.path.join(BASE_DIR, 'fixtures')
 )
+
+# Auth Profile
+AUTH_PROFILE_MODULE = 'profiles.UserProfile'
