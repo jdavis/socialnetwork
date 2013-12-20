@@ -8,59 +8,54 @@
     <h3 class="subheader">Message Inbox</h3>
     <div class="row">
         <div class="large-12 columns">
-                <dl class="tabs vertical" data-tab>
-                {% for thread in threads %}
-                    <dd{% if current_thread == thread %} class="active"{% endif %}><a href="/messages/thread">{{ thread }}</a></dd>
+            Current: {{ current_thread.pk }}
+            <div class="row">
+                <div class="large-2 columns">
+                    <dl class="tabs vertical">
+                    {% for thread in threads %}
+                        <dd{% if current_thread == thread.0 %} class="active"{% endif %}><a href="/messages/{{ thread.0 }}">{{ thread.1|add:" "|add:thread.2 }}</a></dd>
+                    {% endfor %}
+                    {% if threads|length == 0 %}
+                        <dd><a href="#"><em>Empty</em></a></dd>
+                    {% endif %}
+                    </dl>
+                </div>
+                <div class="large-10 columns">
+                    <div class="content active">
+                {% for message in messages %}
+                        <div class="message clear">
+                            <img width="50" src="/static/img/placeholders/leonardo-thumb.jpg" />
+
+                            <div class="message-content">
+                                <span><strong>{{ message.sender.user.first_name }} {{ message.sender.user.last_name }}</strong></span>
+                                <p>
+                                {{ message.content }}
+                                </p>
+                            </div>
+                        </div>
                 {% endfor %}
-                </dl>
-                <div class="tabs-content vertical">
-                    <div class="content active" id="leonardo">
-                    {% for message in messages %}
-                        <div class="received row">
-                            <div class="large-2 columns small-3">
-                                <img width="50" src="/static/img/placeholders/leonardo-thumb.jpg" />
-                            </div>
-
-                            <div class="large-10 columns small-3">
-                                <span><strong>Leonardo:</strong></span>
+                {% if messages|length == 0 %}
+                        <div class="message clear">
+                            <div class="message-content">
                                 <p>
-                                Bacon ipsum dolor sit amet nulla ham qui sint
-                                exercitation eiusmod commodo, chuck duis velit. Aute in
-                                reprehenderit
+                                    Your inbox is empty... :(
                                 </p>
                             </div>
                         </div>
-
-                        <div class="sent row">
-                            <div class="large-10 columns small-3">
-                                <span><strong>You:</strong></span>
-                                <p>
-                                Bacon ipsum dolor sit amet nulla ham qui sint
-                                exercitation eiusmod commodo, chuck duis velit. Aute in
-                                reprehenderit
-                                </p>
-                            </div>
-
-                            <div class="large-2 columns small-3">
-                                <img width="50" src="/static/img/placeholders/donatello-thumb.jpg" />
-                            </div>
-                        </div>
+                {% endif %}
 
                         <div class="row">
                             <div class="large-12 columns">
-                                <form action="{{ action }}" method="POST">
+                                <form action="{{ action }}" method="post">
                                     {% csrf_token %}
                                     <ul>
-                                        {{ message_form.as_ul }}
+                                        {{ message_form.content }}
                                     </ul>
-                                    <input type="submit" value="Save" />
+                                    <input type="hidden" value="{{ current_thread }}" />
+                                    <input type="submit" class="button right" value="Send">
                                 </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="content" id="shredder">
-                        <p>Panel 2 content goes here.</p>
-                    </div>
                 </div>
             </div>
         </div>
