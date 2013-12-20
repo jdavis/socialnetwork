@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'django_extensions',
 
     # Custom apps for tsn
+    'socialnetwork',
     'accounts',
     'friends',
     'messages',
@@ -177,3 +178,8 @@ GRAPH_MODELS = {
     'all_applications': True,
     'exclude_models': 'AbstractUser, Group, Permission, ContentType, Site',
 }
+
+# Load Fixtures for Dummy Data
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, 'fixtures')
+)
