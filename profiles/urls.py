@@ -1,10 +1,10 @@
 from django.conf.urls import patterns, url
 
 from profiles import views
-from views import ProfileView
 
 urlpatterns = patterns(
     '',
-    url(r'^$', ProfileView.as_view(template_name='profiles/index.html')),
+    url(r'^$', views.profile, name='profile_self'),
+    url(r'^(?P<username>\w+)/$', views.profile, name='profile'),
     url(r'^edit/', views.edit, name='edit'),
 )
