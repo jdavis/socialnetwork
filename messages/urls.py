@@ -6,5 +6,6 @@ from messages import views
 urlpatterns = patterns(
     '',
     url(r'^$', views.messages, name='messages'),
-    url(r'^(?P<thread_username>\d+)/$', views.messages, name='messages')
+    url(r'^(?P<user_id>\d+)/$', views.messages, name='messages'),
+    url(r'^new/(?P<user_id>\d+)/$', views.new_message, name='messages')
 )

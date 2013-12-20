@@ -7,7 +7,7 @@ from profiles.models import UserProfile
 from messages.models import Message, MessageForm
 
 
-def messages(request, thread_username=None):
+def messages(request, user_id=None):
     context = {}
 
     message = Message()
@@ -20,25 +20,25 @@ def messages(request, thread_username=None):
         'sender__user__last_name'
     ).distinct()
 
-    if thread_username is None and len(threads) > 0:
+    if user_id is None and len(threads) > 0:
         first_message = Message.objects.filter(
             Q(recipient=request.user) | Q(sender=request.user)
         )[:1].get()
 
         current = first_message.recipient if first_message.sender == request.user else first_message.sender
-    elif thread_username is not None:
-        current = thread_username
+    elif user_id is not None:
+        current = user_id
     else:
         current = None
 
     if request.method == 'POST':
         message.sender = request.user.get_profile()
-        message.recipient = UserProfile.objects.get(user__pk=thread_username)
+        message.recipient = UserProfile.objects.get(user__pk=user_id)
 
         form = MessageForm(request.POST, instance=message)
         form.save()
 
-        return redirect('/messages/' + thread_username)
+        return redirect('/messages/' + user_id)
     else:
         form = MessageForm(request.POST, instance=message)
 
@@ -58,50 +58,26 @@ def messages(request, thread_username=None):
 
     return render(request, 'messages/index.html', context)
 
-def post(request):
-    pass
 
+def new_message(request, user_id=None):
+    context = {}
 
-dummy_data = {
-    'Shredder': [
-        {
-            'sent': False,
-            'content': 'Hey there Donatello. Want to go out and get some pizza?',
-            'viewed': True,
-            'modified': datetime.now(),
-        },
-        {
-            'sent': True,
-            'content': 'Sure. What time were you thinking? I\'m about to attack Shredder now',
-            'viewed': True,
-            'modified': datetime.now(),
-        },
-        {
-            'sent': False,
-            'content': 'How about at 4pm?',
-            'viewed': True,
-            'modified': datetime.now(),
-        },
-    ],
+    message = Message()
+    recipient = UserProfile.objects.get(user__pk=user_id)
 
-    'Leonardo': [
-        {
-            'sent': False,
-            'content': 'Hey there Donatello. Want to go out and get some pizza?',
-            'viewed': True,
-            'modified': datetime.now(),
-        },
-        {
-            'sent': True,
-            'content': 'Sure. What time were you thinking? I\'m about to attack Shredder now',
-            'viewed': True,
-            'modified': datetime.now(),
-        },
-        {
-            'sent': False,
-            'content': 'How about at 4pm?',
-            'viewed': True,
-            'modified': datetime.now(),
-        },
-    ]
-}
+    if request.method == 'POST':
+        message.sender = request.user.get_profile()
+        message.recipient = recipient
+
+        form = MessageForm(request.POST, instance=message)
+        form.save()
+
+        return redirect('/messages/' + user_id)
+    else:
+        form = MessageForm(request.POST, instance=message)
+
+    context['user'] = request.user
+    context['recipient'] = recipient
+    context['form'] = form
+
+    return render(request, 'messages/new.html', context)
