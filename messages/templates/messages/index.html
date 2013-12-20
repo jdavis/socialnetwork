@@ -23,7 +23,11 @@
                     <div class="content active">
                 {% for message in messages %}
                         <div class="message clear">
+                            {% if message.sender.user.userprofile.profile_picture %}
+                            <img width="50" src="/{{ message.sender.user.userprofile.profile_picture.url }}" />
+                            {% else %}
                             <img width="50" src="/static/img/placeholders/leonardo-thumb.jpg" />
+                            {% endif %}
 
                             <div class="message-content">
                                 <span><strong>{{ message.sender.user.first_name }} {{ message.sender.user.last_name }}</strong></span>
