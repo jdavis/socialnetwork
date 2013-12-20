@@ -1,11 +1,23 @@
+from django.views import generic
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.forms import ModelForm, DateInput, DateField
+from django.contrib.auth.models import User
 from profiles.models import UserProfile
 
-def profiles(request):
-    profile = request.user.userprofile
-    return render(request, 'profiles/index.html', {"profile": profile})
+class ProfileView(generic.TemplateView):
+    def get(self, request, *args, **kwargs):
+        user = None
+        if "username" in request.GET:
+            username = request.GET["username"]
+            try:
+                user = User.objects.get(username=username)
+            except User.DoesNotExist:
+                kwargs["error"] = "Can't find user %s." % username
+        else:
+            user = request.user
+        kwargs["userToView"] = user
+        return super(ProfileView, self).get(self, request, *args, **kwargs)
 
 class EditForm(ModelForm):
     class Meta:
