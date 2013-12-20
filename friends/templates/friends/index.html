@@ -9,10 +9,12 @@
 <div class="large-8 small-centered columns">
 
     <div class="large-12 columns">
-        <form>
+        <form action="" method="post">
+            {% csrf_token %}
+
             <h3 class="subheader">Friends</h3>
             <label for="statusUpdate">Add Friend</label>
-            <input id="addFriend" name="addFriend" type="text" placeholder="Enter username to add friend.">
+            <input id="addFriend" name="friend_name" type="text" placeholder="Enter username to add friend.">
             {% if error %}
             <strong>{{ error }}</strong>
             {% endif %}
@@ -29,8 +31,9 @@
     </div>
 
     <div class="large-10 columns">
-        <p><a href="/profiles/?username={{ friend.username }}">{{ friend.first_name }} {{ friend.last_name }}</a></p>
+        <h4>{{ friend.first_name }} {{ friend.last_name }}</h4>
         <ul class="inline-list">
+            <li><a href="/profiles/{{ friend.username }}">Profile</a></li>
             <li><a href="/messages/new/{{ friend.pk }}">Message</a></li>
         </ul>
     </div>

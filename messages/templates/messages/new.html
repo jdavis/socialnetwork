@@ -7,15 +7,13 @@
 <form action="" method="post">
     {% csrf_token %}
 
-        <div class="row content">
-            <div class="box clear large-8 small-centered columns">
-                <h4>Send Message to {{ recipient.user.first_name }} {{ recipient.user.last_name }}</h4>
-                {{ form.content }}
-                <input type="submit" class="button right" value="Send">
-            </div>
+    <div class="row content">
+        <div class="box clear large-8 small-centered columns">
+            <h4>Send Message to {{ recipient.user.first_name }} {{ recipient.user.last_name }}</h4>
+            {{ form.content }}
+            <input type="submit" class="button right" value="Send">
         </div>
-
-
+    </div>
 </form>
 
 {% endblock %}
