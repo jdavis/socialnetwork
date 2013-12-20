@@ -99,7 +99,7 @@
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
 }
 
-.clear:before, div.clear:after {
+.clear:before, .clear:after {
     display: table;
     line-height: 0;
     content: "";
@@ -107,4 +107,23 @@
 
 .clear:after {
     clear: both;
+}
+
+.message {
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 1.25em;
+    padding: .25em;
+}
+
+.message > img {
+    float: left;
+}
+
+.message > .message-content {
+    float: left;
+    padding: 0 .8em;
+}
+
+.tabs.vertical {
+    width: auto;
 }
