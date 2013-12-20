@@ -1,0 +1,109 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "first_name": "josh",
+      "last_name": "davis",
+      "username": "davis",
+      "password": "pbkdf2_sha256$10000$vSYwwGLrFknT$4GXdNapwg68e7ajfU2MCCCh4qk1dBjVYgMe9jxu5hpE="
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "first_name": "bob",
+      "last_name": "barker",
+      "username": "barker",
+      "password": "pbkdf2_sha256$10000$vSYwwGLrFknT$4GXdNapwg68e7ajfU2MCCCh4qk1dBjVYgMe9jxu5hpE="
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "first_name": "Shredder",
+      "last_name": "Dude",
+      "username": "shredder",
+      "password": "pbkdf2_sha256$10000$vSYwwGLrFknT$4GXdNapwg68e7ajfU2MCCCh4qk1dBjVYgMe9jxu5hpE="
+    }
+  },
+  {
+    "model": "messages.message",
+    "pk": 1,
+    "fields": {
+      "content": "Hello there!",
+      "sender": 1,
+      "recipient": 2,
+      "created": "2011-09-01T13:20:30+03:00",
+      "modified": "2011-09-01T13:20:30+03:00"
+    }
+  },
+  {
+    "model": "messages.message",
+    "pk": 2,
+    "fields": {
+      "content": "Hiiiiiiiiiiiiiiiiiii!",
+      "sender": 2,
+      "recipient": 1,
+      "created": "2011-09-01T13:21:30+03:00",
+      "modified": "2011-09-01T13:21:30+03:00"
+    }
+  },
+  {
+    "model": "messages.message",
+    "pk": 3,
+    "fields": {
+      "content": "What's up?",
+      "sender": 1,
+      "recipient": 2,
+      "created": "2011-09-01T13:22:30+03:00",
+      "modified": "2011-09-01T13:22:30+03:00"
+    }
+  },
+  {
+    "model": "messages.message",
+    "pk": 4,
+    "fields": {
+      "content": "Ohhhhhhhhhhhh, nothing!",
+      "sender": 2,
+      "recipient": 1,
+      "created": "2011-09-01T13:23:30+03:00",
+      "modified": "2011-09-01T13:23:30+03:00"
+    }
+  },
+  {
+    "model": "messages.message",
+    "pk": 5,
+    "fields": {
+      "content": "Prepare to get stomped, Turtle!",
+      "sender": 3,
+      "recipient": 1,
+      "created": "2011-09-01T13:24:30+03:00",
+      "modified": "2011-09-01T13:24:30+03:00"
+    }
+  },
+  {
+    "model": "messages.message",
+    "pk": 6,
+    "fields": {
+      "content": "Over my rotten pizza!",
+      "sender": 1,
+      "recipient": 3,
+      "created": "2011-09-01T13:26:30+03:00",
+      "modified": "2011-09-01T13:26:30+03:00"
+    }
+  },
+  {
+    "model": "messages.message",
+    "pk": 7,
+    "fields": {
+      "content": "Deal!",
+      "sender": 3,
+      "recipient": 1,
+      "created": "2011-09-01T13:29:30+03:00",
+      "modified": "2011-09-01T13:29:30+03:00"
+    }
+  }
+]
