@@ -8,7 +8,7 @@ class Message(models.Model):
     viewed = models.BooleanField(default=False)
     sender = models.ForeignKey('profiles.UserProfile',
                                related_name='messages_to')
-    recepient = models.ForeignKey('profiles.UserProfile',
+    recipient = models.ForeignKey('profiles.UserProfile',
                                   related_name='messages_from')
 
     created = models.DateTimeField(auto_now=True)
