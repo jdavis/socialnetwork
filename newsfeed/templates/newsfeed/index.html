@@ -76,7 +76,10 @@
             </p>
 
             <ul class="inline-list">
-                <li><a href="/like/{{ status.pk }}">Like</a></li>
+            {% if status.likes.all|length > 0 %}
+                <li>{{ status.likes.all|length }} like{{ status.likes.all|length|pluralize }}</li>
+            {% endif %}
+                <li><a href="/newsfeed/like/{{ status.pk }}">Like</a></li>
             </ul>
         </div>
     </div>

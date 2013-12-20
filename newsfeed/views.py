@@ -31,6 +31,12 @@ class IndexView(generic.TemplateView):
                                           #status=status)
         #relationship.save()
 
-        return super(IndexView, self).get(self, request, *args, **kwargs)
+        return redirect("/")
 
 
+def like_status(request, status_id=None):
+    status = Status.objects.get(pk=status_id)
+    status.likes.add(request.user.get_profile())
+    status.save()
+
+    return redirect("/")

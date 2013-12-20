@@ -6,8 +6,8 @@ from django.forms import ModelForm
 
 class Status(models.Model):
     content = models.CharField(max_length=512, null=False)
-    owner = models.ForeignKey('profiles.UserProfile',
-                              related_name='likes')
+    owner = models.ForeignKey('profiles.UserProfile', related_name='statuses')
+    likes = models.ManyToManyField('profiles.UserProfile', related_name='liked_statuses')
     created = models.DateTimeField(auto_now=True)
 
 class StatusForm(ModelForm):
