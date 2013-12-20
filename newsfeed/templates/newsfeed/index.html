@@ -60,8 +60,8 @@
     {% for status in statuses %}
     <div class="row">
         <div class="large-2 columns small-3">
-            {% if status.user.userprofile.profile_picture %}
-            <img src="/{{ status.user.userprofile.profile_picture.url }}" />
+            {% if status.owner.user.userprofile.profile_picture %}
+            <img src="/{{ status.owner.user.userprofile.profile_picture.url }}" />
             {% else %}
             <img src="/static/img/placeholders/donatello.jpg" />
             {% endif %}

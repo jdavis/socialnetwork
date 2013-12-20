@@ -1,47 +1,53 @@
 {% extends "base.html" %}
 
-{# TODO: Use template variables #}
 {% block title %}
-    {{ user.first_name }}'s Profile
+    {% if userToView %}
+        {{ userToView.first_name }}'s Profile
+    {% else %}
+        User Not Found
+    {% endif %}
 {% endblock %}
 
 {% block content %}
 
+{% if error %}
+<strong>{{ error }}</strong>
+{% else %}
 <div class="large-3 columns">
     <div class="panel">
         <div class="row sidebar">
             <div class="large-12 columns">
                 <a href="#" class="th radius margin-large tb">
-                    {% if profile.profile_picture %}
-                        <img src="/{{ profile.profile_picture.url }}" />
+                    {% if userToView.userprofile.profile_picture %}
+                        <img src="/{{ userToView.userprofile.profile_picture.url }}" />
                     {% else %}
                         <img src="/static/img/placeholders/donatello.jpg" />
                     {% endif %}
                 </a>
 
                 <h4 class="subheader">
-                    <a href="#">{{ user.first_name }} {{ user.last_name }}</a>
+                    <a href="#">{{ userToView.first_name }} {{ userToView.last_name }}</a>
                 </h4>
                 <dl>
                     <dt>Gender</dt>
-                    {% if profile.gender %}
-                        <dd>{{ profile.gender }}</dd>
+                    {% if userToView.userprofile.gender %}
+                        <dd>{{ userToView.userprofile.gender }}</dd>
                     {% else %}
                         <dd>???</dd>
                     {% endif %}
 
                     <dt>Birthday</dt>
-                    {% if profile.birthday %}
-                        <dd>{{ profile.birthday }}</dd>
+                    {% if userToView.userprofile.birthday %}
+                        <dd>{{ userToView.userprofile.birthday }}</dd>
                     {% else %}
                         <dd>???</dd>
                     {% endif %}
                     <dt>Member Since</dt>
-                    <dd>{{ profile.created }}</dd>
+                    <dd>{{ userToView.userprofile.created }}</dd>
                 </dl>
-                <a href="edit/">Edit Profile</a>
             </div>
         </div>
     </div>
 </div>
+{% endif %}
 {% endblock %}

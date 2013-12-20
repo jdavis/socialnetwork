@@ -34,7 +34,7 @@
         </div>
 
         <div class="large-10 columns">
-            <p><a href="/profiles/{{ friend.username }}">{{ friend.first_name }} {{ friend.last_name }}</a></p>
+            <p><a href="/profiles/?username={{ friend.username }}">{{ friend.first_name }} {{ friend.last_name }}</a></p>
             <ul class="inline-list">
                 <li><a href="/messages/new/{{ friend.pk }}">Message</a></li>
             </ul>
