@@ -1,8 +1,9 @@
 from datetime import datetime
 
 from django.db.models import Q
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from profiles.models import UserProfile
 from messages.models import Message, MessageForm
 
 
@@ -19,13 +20,6 @@ def messages(request, thread_username=None):
         'sender__user__last_name'
     ).distinct()
 
-    if request.method == 'POST':
-        form = MessageForm(request.POST, instance=message)
-        form.sender = request.user
-        form.save()
-    else:
-        form = MessageForm(request.POST, instance=message)
-
     if thread_username is None and len(threads) > 0:
         first_message = Message.objects.filter(
             Q(recipient=request.user) | Q(sender=request.user)
@@ -36,6 +30,18 @@ def messages(request, thread_username=None):
         current = thread_username
     else:
         current = None
+
+    if request.method == 'POST':
+        message.sender = request.user.get_profile()
+        message.recipient = UserProfile.objects.get(user__pk=thread_username)
+
+        form = MessageForm(request.POST, instance=message)
+        form.save()
+
+        return redirect('/messages/' + thread_username)
+    else:
+        form = MessageForm(request.POST, instance=message)
+
 
     messages = Message.objects.filter(
         Q(sender=current, recipient=request.user) |
