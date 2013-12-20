@@ -13,7 +13,7 @@ urlpatterns = patterns(
     url(r'^profiles/', include('profiles.urls', namespace='profiles')),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^messages/', include('messages.urls', namespace='messages')),
-	url(r'^friends/', include('friends.urls', namespace='friends')),
+    url(r'^friends/', include('friends.urls', namespace='friends')),
 )
 
 if settings.DEBUG:
